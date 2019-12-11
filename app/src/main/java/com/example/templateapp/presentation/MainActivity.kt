@@ -1,9 +1,10 @@
-package com.example.templateapp
+package com.example.templateapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.templateapp.R
+import com.example.templateapp.presentation.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
