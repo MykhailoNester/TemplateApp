@@ -1,8 +1,9 @@
 package com.example.templateapp.di
 
 import android.app.Application
-import com.example.templateapp.di.module.AppModule
 import com.example.templateapp.App
+import com.example.templateapp.di.module.ApiModule
+import com.example.templateapp.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -14,7 +15,8 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AndroidSupportInjectionModule::class,
-        AppModule::class]
+        AppModule::class,
+        ApiModule::class]
 )
 interface AppComponent {
 
@@ -23,6 +25,9 @@ interface AppComponent {
 
         @BindsInstance
         fun application(app: Application): Builder
+
+        @BindsInstance
+        fun apiModule(apiModule: ApiModule): Builder
 
         fun build(): AppComponent
     }

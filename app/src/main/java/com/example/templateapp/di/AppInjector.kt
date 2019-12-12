@@ -1,6 +1,7 @@
 package com.example.templateapp.di
 
 import com.example.templateapp.App
+import com.example.templateapp.di.module.ApiModule
 
 open class AppInjector(private val application: App) {
 
@@ -13,6 +14,7 @@ open class AppInjector(private val application: App) {
     protected open fun getAppComponent(): AppComponent {
         return DaggerAppComponent.builder()
             .application(application)
+            .apiModule(ApiModule())
             .build()
     }
 }
